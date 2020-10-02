@@ -21,6 +21,8 @@ module.exports = class Email {
       // Sendgrid
       return nodemailer.createTransport({
         service: 'smtp.pepipost.com',
+        ignoreTLS: true ,
+        secure: false,
         port:587,
         auth: {
           user: process.env.SENDGRID_USERNAME,
