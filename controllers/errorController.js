@@ -3,10 +3,11 @@ const ErrorResponse = require('../utils/appError');
 const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   // eslint-disable-next-line no-console
-  // console.log(err);
+  // 
   error.message = err.message;
 
   if (process.env.NODE_ENV === 'production') {
+    console.log(err);
     if (err.message.startsWith('Cannot read property')) {
       const message = `No document found, please check again!!`;
       error = new ErrorResponse(message, 404);
