@@ -23,7 +23,7 @@ module.exports = class Email {
         service: 'smtp.pepipost.com',
         ignoreTLS: true ,
         secure: false,
-        port:587,
+        port:25,
         auth: {
           user: process.env.SENDGRID_USERNAME,
           pass: process.env.SENDGRID_PASSWORD
